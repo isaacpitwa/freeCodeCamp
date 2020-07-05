@@ -1,5 +1,7 @@
+// Initial Solution
 function palindrome(str) {
-    let letterCollection  = str.split('');
+    // Use replace to replace none alphanumeric with null
+    let letterCollection  = str.replace(/[\W_]/g, '').toLowerCase().split('');
     let originalLength  = letterCollection.length;
     for (let i = 0;i<originalLength;i++){
         if( letterCollection.length > 1 && letterCollection.pop() != letterCollection.shift()){
@@ -9,8 +11,8 @@ function palindrome(str) {
 
     return true;
   }
-  
+
   
   
   palindrome("eye");
-  console.log(palindrome("eyee"))
+  console.log(palindrome("race car"))
