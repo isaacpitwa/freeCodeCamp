@@ -12,7 +12,13 @@ function palindrome(str) {
     return true;
   }
 
-  
+// proposed Solution
+
+function palindromeSolution(str) {
+    // Use  Array split ,reverse join  method  for a direct comparison
+    return str.replace(/[\W_]/g, '').toLowerCase() === str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
+  }
+
   
   palindrome("eye");
-  console.log(palindrome("race car"))
+  console.log(palindromeSolution("race car"))
