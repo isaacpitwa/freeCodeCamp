@@ -58,7 +58,12 @@ var denom = [
       return acc; // Return the current change_arr
     }, []); // Initial value of empty array for reduce
   
-   
+    // If there are no elements in change_arr or we have leftover change, return
+    // the string "Insufficient Funds"
+    if (change_arr.length < 1 || change > 0) {
+      output.status = "INSUFFICIENT_FUNDS";
+      return output;
+    }
   
     // Here is your change, ma'am.
     output.status = "OPEN";
