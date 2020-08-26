@@ -1,190 +1,152 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
-$darkAccent: #224B4B;
-$lightAccent: #2CDA9D;
-$backgroundBase: #619E9E;
-
-$shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
-$default-border: 1px solid darken($backgroundBase, 35%);
-
-
-body {
-  background: lighten($backgroundBase, 12%);
-  margin: 10px 0;
+ body {
+	 background: #87b5b5;
+	 margin: 10px 0;
 }
-
-#preview,
-.title {
-  display: inline-block;
+ #preview, .title {
+	 display: inline-block;
 }
-
-.colorScheme {
-  background-color: lighten($backgroundBase, 30%);
-  border: $default-border;
-  box-shadow: $shadow;
-  border-top: none;
+ .colorScheme, .editorWrap textarea, .previewWrap {
+	 background-color: #c0d8d8;
+	 border: 1px solid #1d2f2f;
+	 box-shadow: 1px 1px 10px 2px #3a5f5f;
+	 border-top: none;
 }
-
-.toolbar {
-  position: relative;
-  background-color: lighten($darkAccent, 25%);
-  padding: 4px 4px 3px 3px;
-  border: $default-border;
-  box-shadow: $shadow;
-  font-family: Russo One;
-  font-size: 15px;
-  i {
-    width: 25px;
-    color: black;
-    margin-left: 5px;
-  }
-  .fa-arrows-alt,
-  .fa-compress {
-    position: absolute;
-    right: -5px;
-  }
+ .toolbar {
+	 position: relative;
+	 background-color: #4aa3a3;
+	 padding: 4px 4px 3px 3px;
+	 border: 1px solid #1d2f2f;
+	 box-shadow: 1px 1px 10px 2px #3a5f5f;
+	 font-family: Russo One;
+	 font-size: 15px;
 }
-
-.fa-retweet,
-.fa-compress,
-.fa-arrows-alt {
-  &:hover {
-  color: lighten($lightAccent, 10%);
-  cursor: pointer;
-  }
+ .toolbar i {
+	 width: 25px;
+	 color: black;
+	 margin-left: 5px;
 }
-
-.fa-free-code-camp {
-  margin-right: 3px;
+ .toolbar .fa-arrows-alt, .toolbar .fa-compress {
+	 position: absolute;
+	 right: -5px;
 }
-
-.editorWrap {
-  width: 600px;
-  margin: 18px auto;
-  .toolbar {
-    width: 99%;
-  }
-  textarea {
-    @extend .colorScheme;
-    width: 99%;
-    min-height: 200px;
-    margin-bottom: -5px;
-    resize: vertical;
-    outline: none;
-    padding-left: 5px;
-    padding-top: 5px;
-    font-size: 12px;
-  }
+ .fa-retweet:hover, .fa-compress:hover, .fa-arrows-alt:hover {
+	 color: #57e2b1;
+	 cursor: pointer;
 }
-
-.converter {
-  width: 100px;
-  text-align: center;
-  font-size: 35px;
-  margin: auto;
+ .fa-free-code-camp {
+	 margin-right: 3px;
 }
-
-.previewWrap {
-  @extend .colorScheme;
-  width: 800px;
-  margin: 20px auto;
-  min-height: 200px;
-  overflow-wrap: break-word;
-  padding-right: 20px;
-  .toolbar {
-    left: -1px;
-    width: 100%;
-    padding-right: 17px;
-  }
-  #preview {
-    margin-left: 5px;
-    margin-top: -10px;
-    width: 100%;
-  }
+ .editorWrap {
+	 width: 600px;
+	 margin: 18px auto;
 }
-
-@media screen and (max-width: 850px) {
-  .previewWrap {
-    width: 630px;
-  }
-  .editorWrap {
-    width: 550px;
-  }
+ .editorWrap .toolbar {
+	 width: 99%;
 }
-
-.maximized {
-  width: 96%;
-  min-height: 100vh;
-  margin: auto;
-  textarea {
-    min-height: 95vh;
-    resize: none;
-  }
+ .editorWrap textarea {
+	 width: 99%;
+	 min-height: 200px;
+	 margin-bottom: -5px;
+	 resize: vertical;
+	 outline: none;
+	 padding-left: 5px;
+	 padding-top: 5px;
+	 font-size: 12px;
 }
-
-.hide {
-  display: none;
+ .converter {
+	 width: 100px;
+	 text-align: center;
+	 font-size: 35px;
+	 margin: auto;
 }
-
-@media screen and (max-width: 650px) {
-  body {
-    margin: 5px 0;
-  }
-  .editorWrap {
-    width: 80vw;
-    margin: 0 auto;
-  }
-  .maximized {
-    width: 95%;
-    margin: auto;
-  }
-  .previewWrap {
-    width: 95vw;
-    #preview {
-      width: 100%;
-      img {
-        height: 200px;
-      }
-    }
-  }
+ .previewWrap {
+	 width: 800px;
+	 margin: 20px auto;
+	 min-height: 200px;
+	 overflow-wrap: break-word;
+	 padding-right: 20px;
 }
-
-// MARKDOWN STYLES
-#preview {
-  blockquote {
-    border-left: 3px solid #224B4B;
-    color: #224B4B;
-    padding-left: 5px;
-    margin-left: 25px;
-  }
-
-  code {
-    background: white;
-    padding: 1px 4px 2px 4px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  pre {
-    background: white;
-    padding: 5px 0 5px 5px;
-  }
-
-  h1 {
-    border-bottom: 2px solid $darkAccent;
-  }
-
-  h2 {
-    border-bottom: 1px solid $darkAccent;
-  }
-
-  table {
-    border-collapse: collapse;
-  }
-
-  td,
-  th {
-    border: 2px solid $darkAccent;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
+ .previewWrap .toolbar {
+	 left: -1px;
+	 width: 100%;
+	 padding-right: 17px;
 }
+ .previewWrap #preview {
+	 margin-left: 5px;
+	 margin-top: -10px;
+	 width: 100%;
+}
+ @media screen and (max-width: 850px) {
+	 .previewWrap {
+		 width: 630px;
+	}
+	 .editorWrap {
+		 width: 550px;
+	}
+}
+ .maximized {
+	 width: 96%;
+	 min-height: 100vh;
+	 margin: auto;
+}
+ .maximized textarea {
+	 min-height: 95vh;
+	 resize: none;
+}
+ .hide {
+	 display: none;
+}
+ @media screen and (max-width: 650px) {
+	 body {
+		 margin: 5px 0;
+	}
+	 .editorWrap {
+		 width: 80vw;
+		 margin: 0 auto;
+	}
+	 .maximized {
+		 width: 95%;
+		 margin: auto;
+	}
+	 .previewWrap {
+		 width: 95vw;
+	}
+	 .previewWrap #preview {
+		 width: 100%;
+	}
+	 .previewWrap #preview img {
+		 height: 200px;
+	}
+}
+ #preview blockquote {
+	 border-left: 3px solid #224b4b;
+	 color: #224b4b;
+	 padding-left: 5px;
+	 margin-left: 25px;
+}
+ #preview code {
+	 background: white;
+	 padding: 1px 4px 2px 4px;
+	 font-size: 12px;
+	 font-weight: bold;
+}
+ #preview pre {
+	 background: white;
+	 padding: 5px 0 5px 5px;
+}
+ #preview h1 {
+	 border-bottom: 2px solid #224b4b;
+}
+ #preview h2 {
+	 border-bottom: 1px solid #224b4b;
+}
+ #preview table {
+	 border-collapse: collapse;
+}
+ #preview td, #preview th {
+	 border: 2px solid #224b4b;
+	 padding-left: 5px;
+	 padding-right: 5px;
+}
+ 
